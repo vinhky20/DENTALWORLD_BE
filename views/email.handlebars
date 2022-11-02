@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .form-thank {
+        color: #003580;
+    }
+
+    .confirmForm {
+        align-self: center;
+        border: 4px solid #003580;
+        padding: 48px;
+        border-radius: 12px;
+        background-image: linear-gradient(to right, #D6F0FF, #DBEAFF);
+    }
+
+    .confirmForm-h2 {
+        text-align: center;
+        color: #FFA800;
+        margin-top: 0px;
+        font-weight: bold;
+    }
+
+    .confirmForm-success {
+        border: 4px solid #4ECB71;
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 20px;
+        font-weight: bold;
+        color: #4ECB71;
+    }
+
+    .confirmForm-address {
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div class="form">
+        <p class="form-thanks">
+            Cám ơn bạn đã sử dụng dịch vụ đặt lịch khám trực tuyến của chúng tôi, đây là phiếu khám bệnh của bạn <br>
+            Vui lòng mang theo phiếu khám bệnh này khi đến khám tại bệnh viện. Xin chân thành cám ơn!
+        </p>
+        <div class="confirmForm">
+            <h2 class="confirmForm-h2">
+                Nha khoa {{clinic}}
+            </h2>
+            <h2><b>Đặt lịch khám thành công!</b></h2>
+            <p class="confirmForm-address"><i>{{address}}</i></p>
+            <p>Ngày khám: <b>{{date}}</b></p>
+            <p>Giờ khám: <b>{{time}}</b></p>
+            <p>Dịch vụ khám: <b>{{service}}</b></p>
+            <p>Tên khách hàng: <b>{{customer}}</b></p>
+            <p>Giới tính: <b>{{male}}</b></p>
+            <p>Lưu ý của khách hàng: <b>{{note}}</b></p>
+        </div>
+    </div>
+</body>
+
+</html>
