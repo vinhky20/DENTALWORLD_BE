@@ -12,7 +12,7 @@ module.exports = {
     },
     getClinicReviews: (req, res) => {
         clinicId = req.params.idClinic;
-        sql = 'SELECT * FROM REVIEW WHERE REVIEW_CLINIC = ?';
+        sql = 'select * from review r join customer c on r.review_customer = c.customer_id where review_clinic = ?;';
         db.query(sql, [clinicId], (err, response) => {
             if (err) throw err
             res.status(200).json(response);

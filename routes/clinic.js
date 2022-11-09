@@ -1,6 +1,6 @@
-module.exports = function (app) {
-    let clinicsCtrl = require('../controllers/ClinicsController.js');
 
+module.exports = function (app) {
+    let clinicsCtrl = require('../controllers/ClinicsController.js')
     // todoList Routes
     app.route('/clinics')
         .get(clinicsCtrl.get)
