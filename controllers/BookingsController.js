@@ -13,6 +13,17 @@ module.exports = {
             res.status(200).json(response)
         })
     },
+    getBookedTimeSlot: (req, res) => {
+        let clinic = req.params.scheduleClinic;
+        let date = req.params.scheduleDate;
+        // console.log("DAY LA CLINIC va date: ", clinic, date);
+        let sql = 'select booking_timeslot from booking where booking_clinic = ? and booking_date = ? and booking_status = 0'
+        db.query(sql, [clinic, date], (err, response) => {
+            if (err) throw err
+            // console.log("RESPONSE NÈ: ", response)
+            res.status(200).json(response)
+        })
+    },
 
     getBookingInfo: (req, res) => {
         clinic = req.params.clinicId;

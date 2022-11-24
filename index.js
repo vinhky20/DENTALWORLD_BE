@@ -35,7 +35,6 @@ let timeslots = require('./routes/timeslot')
 let bookings = require('./routes/booking')
 let reviews = require('./routes/review')
 let auth = require('./routes/auth')
-let clinic_schedule = require('./routes/clinic_schedule');
 
 clinics(app)
 customers(app)
@@ -44,7 +43,6 @@ timeslots(app)
 bookings(app)
 reviews(app)
 auth(app)
-clinic_schedule(app);
 
 app.use(function (req, res) {
     res.status(404).send({ url: req.originalUrl + ' not found' })

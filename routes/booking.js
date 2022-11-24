@@ -15,6 +15,9 @@ module.exports = function (app) {
     app.route('/bookings/customer/:customerId')
         .get(bookingsCtrl.getHistory)
 
+    app.route('/bookings/bookedTimeSlot/:scheduleClinic/:scheduleDate')
+        .get(bookingsCtrl.getBookedTimeSlot)
+
     app.route('/bookings/:bookingId')
         .get(bookingsCtrl.detail)
         .put(bookingsCtrl.update)
