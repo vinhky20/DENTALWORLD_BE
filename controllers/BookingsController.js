@@ -27,7 +27,7 @@ module.exports = {
 
     getBookingInfo: (req, res) => {
         clinic = req.params.clinicId;
-        let sql = 'select * from booking b join customer c on b.booking_customer = c.customer_id join timeslot t on b.booking_timeslot = t.timeslot_id where booking_clinic = ?;'
+        let sql = 'select * from booking where booking_clinic = ?;'
         db.query(sql, [clinic], (err, response) => {
             if (err) throw err
             res.status(200).json(response)
@@ -36,7 +36,7 @@ module.exports = {
 
     getHistory: (req, res) => {
         customer = req.params.customerId;
-        let sql = 'select * from booking b join clinic c on b.booking_customer = c.clinic_id join timeslot t on b.booking_timeslot = t.timeslot_id where booking_customer = ?;'
+        let sql = 'select * from booking b join timeslot t on b.booking_timeslot = t.timeslot_id where booking_customer = ?;'
         db.query(sql, [customer], (err, response) => {
             if (err) throw err
             res.status(200).json(response)
